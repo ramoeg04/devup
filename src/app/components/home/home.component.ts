@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/services/article.service';
+import { sideText } from 'src/core/interfaces/text';
+import { Article } from '../../../core/interfaces/iarticle';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +10,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  lists : any;
+  public title: string = "Nuestros Artículos"
+  public sides = sideText;
 
-  constructor() { }
+  constructor(public articleService: ArticleService) { }
 
   ngOnInit(): void {
+    this.articleList();
   }
+
+  articleList() {
+    this.articleService.articleList()
+    .subscribe(data => {
+      this.lists = data;
+    })
+
+  }
+
+  searchArticle(name:string) {
+    this.articleService.articleFilter(name).subscribe((res: any) => {
+      this.lists = res;
+      if (this.lists.length === 0) {
+        this.articleList();
+      }
+    })
+  }
+
+
 
 }

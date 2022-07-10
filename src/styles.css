@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Open Sans', sans-serif; }
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: var(--text-bg-color);
+    font-family: 'Caveat', cursive;
+}
+
+.text{
+    color: var(--text-bg-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --text-bg-color: #3f454a;
+    --text-bg-hover: #d8ad3d;
+    --button-bg-color: #3f454a;
+    --button-bg-hover: #009cd9;
+  }
