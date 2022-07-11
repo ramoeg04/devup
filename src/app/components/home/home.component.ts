@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { sideText } from 'src/core/interfaces/text';
-import { Article } from '../../../core/interfaces/iarticle';
-
 
 @Component({
   selector: 'app-home',

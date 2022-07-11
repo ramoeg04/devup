@@ -1,0 +1,26 @@
+.align{
+    display: flex;
+    flex-direction: column;
+}
+
+.errors{
+    color: red;
+    font-size: 12px !important;
+}
+
+.btn{
+    border-radius: 2em;
+    background-color: var(--button-bg-color);
+    color: white;
+}
+  
+.btn:hover {
+    background-color: var(--button-bg-hover);
+}
+
+.btn:disabled,
+button[disabled]{
+
+  background-color: var(--text-bg-color);
+
+}

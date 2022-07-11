@@ -19,6 +19,6 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
 :root {
     --text-bg-color: #3f454a;
     --text-bg-hover: #d8ad3d;
-    --button-bg-color: #3f454a;
+    --button-bg-color: #d8ad3d;
     --button-bg-hover: #009cd9;
   }

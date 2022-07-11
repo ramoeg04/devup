@@ -1,1 +1,47 @@
-<p>newsletter works!</p>
+<p class="font title mt-5">{{title}}</p>
+
+
+
+
+<form [formGroup]="addForm">
+    <div class="align align-items-center">
+    <div class="row g-3 align-items-center mt-2">
+        <div class="col-auto">
+            <label class="text">NOMBRE</label>
+            <input type="text" class="form-control" name="firstname" formControlName="firstname"
+                placeholder="Ingresa tu Nombre" autofocus>
+            <label class="errors"
+                *ngIf="this.addForm.controls.firstname.errors && this.addForm.controls.firstname.dirty ">{{error}}</label>
+        </div>
+        <div class="col-auto">
+            <label class="text">APELLIDO</label>
+            <input type="text" class="form-control" name="lastname" formControlName="lastname"
+                placeholder="Ingresa tu Apellido">
+            <label class="errors"
+                *ngIf="this.addForm.controls.lastname.errors && this.addForm.controls.lastname.dirty ">{{error}}</label>
+        </div>
+    </div>
+
+    <div class="row g-3 align-items-center mt-2">
+        <div class="col-auto">
+            <label class="text">EMAIL</label>
+            <input type="text" class="form-control" name="email" formControlName="email" placeholder="Ingresa tu Email"
+                autofocus>
+            <label class="errors"
+                *ngIf="this.addForm.controls.email.errors && this.addForm.controls.email.dirty ">{{error}}</label>
+        </div>
+        <div class="col-auto">
+            <label class="text">TELEFONO</label>
+            <input type="text" class="form-control" name="phone" formControlName="phone"
+                placeholder="Ingresa tu Teléfono">
+            <label class="errors"
+                *ngIf="this.addForm.controls.phone.errors && this.addForm.controls.phone.dirty">{{error}}</label>
+        </div>
+    </div>
+
+    <div class="row mt-4 mb-4">
+        <button class="btn"  type="submit" [disabled]="!addForm.valid"
+            (click)="post()">Ingresar</button>
+    </div>
+</div>
+</form>
